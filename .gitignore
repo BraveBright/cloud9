@@ -1,2 +1,6 @@
 *.pem
 *.pub
+docker-compose.yml
+
+.ssh/
+tmp/

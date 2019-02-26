@@ -1,0 +1,13 @@
+version: '3'
+services:
+  cloud9:
+    build: ./
+    image: cloud9:latest
+    container_name: cloud9
+    volumes:
+      - ./.ssh:/home/cloud9/.ssh
+      - ./tmp/project.settings:/home/cloud9/.c9/project.settings
+      - ./tmp/state.settings:/home/cloud9/.c9/state.settings
+      - ./tmp/user.settings:/home/cloud9/.c9/user.settings
+      - ./tmp/metadata:/home/cloud9/.c9/metadata
+    command: ["--port=8080","--listen=0.0.0.0","--auth=user:pass","-w","/home/cloud9/"]
